@@ -3,4 +3,16 @@
 @media (prefers-reduced-motion: no-preference) {
   
 } */
+h1{
+  text-align: center;
+}
 
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  margin: 1rem;
+  
+}
