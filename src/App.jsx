@@ -18,6 +18,8 @@ function App() {
         {/* <h1>my shop</h1> */}
         <Navbar></Navbar>
           <Outlet />
+          
+          {/* <h1>this is home</h1> */}
           {/* <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/shop' element={<Shop />} />
