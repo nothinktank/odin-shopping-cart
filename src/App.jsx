@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import './App.css'
 import './style.css'
-import { Link } from 'react-router'
+import { Link, Route, Routes, Outlet } from 'react-router'
 import Navbar from './Navbar'
+import Home from './pages/Home'
+import Shop from './pages/Shop'
+import Cart from './pages/Cart'
+
 
 
 function App() {
@@ -13,6 +17,12 @@ function App() {
       <div>
         {/* <h1>my shop</h1> */}
         <Navbar></Navbar>
+          <Outlet />
+          {/* <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/shop' element={<Shop />} />
+              <Route path='/cart' element={<Cart />} />
+          </Routes> */}
         
           {/* <ul>
           <li>

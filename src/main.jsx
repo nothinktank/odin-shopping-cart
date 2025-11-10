@@ -5,21 +5,28 @@ import App from './App.jsx'
 
 import Profile from './Profile.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import Cart from './Cart.jsx'
-import Shop from './Shop.jsx'
+import Cart from './pages/Cart.jsx'
+import Shop from './pages/Shop.jsx'
+import Home from './pages/Home.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-  },
-  {
-    path: 'Cart',
-    element: <Cart />
-  },
-  {
-    path: 'Shop',
-    element: <Shop />
+    children: [
+      {
+        path: 'Home',
+        element: <Home />
+      },
+      {
+        path: 'Cart',
+        element: <Cart />
+      },
+      {
+        path: 'Shop',
+        element: <Shop />
+      },
+    ]
   },
 ]);
 
