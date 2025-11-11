@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import './style.css'
+import './styles/Item-card.css'
+import './styles/Card-container.css'
 import { Link, Route, Routes, Outlet } from 'react-router'
 import Navbar from './Navbar'
 import Home from './pages/Home'
