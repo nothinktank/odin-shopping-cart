@@ -1,5 +1,5 @@
 .item-card {
-    background-color: beige;
+    /* background-color: beige; */
     padding: 0.5rem;
     border-radius: 1rem;
     display: flex;
@@ -23,4 +23,5 @@ img{
 
 .quant-box {
     display: flex;
+    justify-content: center;
 }
