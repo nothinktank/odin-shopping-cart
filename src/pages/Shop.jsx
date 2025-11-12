@@ -1,6 +1,9 @@
 import { Link } from "react-router";
 import ItemCard from "../component/ItemCard";
 import itemList from "../assets/Item-array";
+import { CartContext } from "../App";
+
+
 
 const Shop = () => {
     return (

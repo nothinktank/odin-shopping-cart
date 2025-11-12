@@ -1,7 +1,22 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../App";
 
 const ItemCard = ({name, imageLink}) => {
+    const {addToCart, cartItems} = useContext(CartContext)
     const [quantity, setQuantity] = useState(0)
+
+    const handleAddToCart = () => {
+        if (quantity > 0) {
+            addToCart({
+                itemName: name, 
+                imageLink: imageLink, 
+                quantity: quantity
+            });
+            setQuantity(0) //reset quantity to 0
+        }
+        
+    }
     return (
         <div className="item-card">
             <h2 className="product-name">{name}</h2>
@@ -17,6 +32,7 @@ const ItemCard = ({name, imageLink}) => {
                     </form>
                     <button onClick={() => setQuantity(prev => prev + 1)}>+</button>
                 </div>
+                <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     )
 }

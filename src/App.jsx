@@ -9,15 +9,37 @@ import Home from './pages/Home'
 import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 
+import { useContext, createContext } from 'react'
 
+// array is the list of items to be populated under cart page
+export const CartContext = createContext([])
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
+  const [cartItems, setCartItems] = useState([])
+
+  //add items to cart function
+  //newItem is the item object
+  const addToCart = (newItem) => {
+    //check if new item already exist
+    setCartItems((prev) => {
+      const existingItem = prev.find(i => i.itemName === newItem.itemName)
+
+      if (existingItem) {
+        // add the newItem quantity to existing item quantity if newItem already exists in the context array
+        return prev.map((i) => i.itemName === newItem.itemName ? {...i, quantity: i.quantity += newItem.quantity } : i)
+      } else {
+        return [...prev, newItem]
+      }
+    })
+  }
 
   return (
     // <>
+    <CartContext.Provider value={{cartItems, addToCart}}>
       <div>
         {/* <h1>my shop</h1> */}
+
         <Navbar></Navbar>
           <Outlet />
           
@@ -38,6 +60,7 @@ function App() {
           </ul> */}
         
       </div>
+      </CartContext.Provider>
     // </>
   )
 }
