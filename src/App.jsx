@@ -27,16 +27,60 @@ function App() {
 
       if (existingItem) {
         // add the newItem quantity to existing item quantity if newItem already exists in the context array
-        return prev.map((i) => i.itemName === newItem.itemName ? {...i, quantity: i.quantity += newItem.quantity } : i)
+        return prev.map((i) => i.itemName === newItem.itemName ? {...i, quantity: i.quantity + newItem.quantity } : i)
       } else {
         return [...prev, newItem]
       }
     })
   }
 
+  const updateCart = (item, operation) => {
+    // if (operation === "+") {
+    //   //if increasing quantity of cart item
+    //   setCartItems((prev) => {
+    //     return prev.map((i) => i.itemName === item.itemName ? {...i, quantity: i.quantity + 1} : i)
+    //   })
+    // } else {
+    //   //if decreasing quantity of cart item
+    //   setCartItems((prev) => {
+    //     return prev.map((i) => i.itemName === item.itemName ? {...i, quantity: Math.max(0, i.quantity - 1) } : i)
+    //   })
+    // }
+
+    // setCartItems((prev) => {
+    //   prev.map((i) => {
+    //     if (i.itemName === item.itemName) {
+    //       const newQuantity = operation === "+" ? (i.quantity + 1) : (Math.max(0, i.quantity - 1))
+    //       return { ...i, quantity: newQuantity }
+    //     }
+    //     return i;
+    //   }).filter(i => i.quantity > 0); //remove items with 0 quantity
+    // })
+
+    setCartItems((prev) => 
+      prev.map((i) => {
+        if (i.itemName === item.itemName) {
+          let newQuantity;
+          if (operation === '+') {
+            newQuantity = i.quantity + 1;
+          } else if (operation === '-') {
+            newQuantity = Math.max(0, i.quantity - 1) ;
+          } else if (typeof(operation) === "number") {
+            newQuantity = Math.max(0, operation);
+          }
+          return {...i, quantity: newQuantity}
+        }
+        return i
+      }).filter(i => i.quantity > 0)
+      
+    )
+
+
+  }
+
   return (
     // <>
-    <CartContext.Provider value={{cartItems, addToCart}}>
+    <CartContext.Provider value={{cartItems, addToCart, updateCart}}>
       <div>
         {/* <h1>my shop</h1> */}
 
