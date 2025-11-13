@@ -1,0 +1,28 @@
+.cart-item-card {
+    /* background-color: beige; */
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 550px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+                0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    justify-content: center;
+    border-radius: 1rem;
+    max-width: 150px;
+}
+
+.quant-box {
+    display: flex;
+    justify-content: center;
+}
