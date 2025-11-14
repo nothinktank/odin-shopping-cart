@@ -11,7 +11,8 @@ const Cart = () => {
         <div className="cart-container">
             {/* <div>Your Cart</div> */}
             <div className="main-section">
-                {  
+                <div className="cart-items-list">
+                    {  
                 (!cartItems || cartItems.length === 0) ? 
                 // empty cart rendered here
                 <div className="empty-cart-container">Your cart is empty</div> 
@@ -33,6 +34,8 @@ const Cart = () => {
                     })
                 )
             }
+                </div>
+                
             <div className="summary-container">
             <CartSummary />
             </div>
@@ -41,8 +44,8 @@ const Cart = () => {
             
             
             {/* display cart items here with quantity */}
-            <div className="footer"></div>
-            <Link to='/'>Return Home</Link>
+            <div className="footer"><Link to='/'>Return Home</Link></div>
+            
         </div>
     )
 }
