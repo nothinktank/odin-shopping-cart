@@ -1,0 +1,35 @@
+.cart-container {
+    /* display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 1fr; */
+    display: flex;
+    flex-direction: column;
+    column-gap: 1rem;
+    min-height: 100vh;
+}
+
+.main-section {
+    margin: 1rem;
+    flex: 2;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+}
+
+.footer {
+    flex: 1;
+}
+
+.empty-cart-container {
+    
+}
+
+.summary-container {
+    
+    /* flex-direction: row; */
+    width: 100%;
+/*     
+    max-height: ; */
+
+    
+}

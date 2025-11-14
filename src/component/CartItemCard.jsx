@@ -6,29 +6,28 @@ const CartItemCard = ({name, imageLink, quantity}) => {
     const { updateCart } = useContext(CartContext)
     
 
-    // const handleAddToCart = () => {
-    //     if (quantity > 0) {
-    //         addToCart({
-    //             itemName: name, 
-    //             imageLink: imageLink, 
-    //             quantity: quantity
-    //         });
-    //         setQuantity(0) //reset quantity to 0
-    //     }
+    const handleUpdateCart = (operation) => {
+        if (quantity > 0) {
+            updateCart({
+                itemName: name, 
+                imageLink: imageLink, 
+                quantity: quantity
+            }, operation)
+            // setQuantity(0) //reset quantity to 0
+        }
         
-    // }
+    }
     return (
         <div className="cart-item-card">
-            <img src={imageLink} alt="" />
-            <div>{name}</div>
-        
-            <div>quantity: {quantity}</div>
-            <div className="quant-box">
-                <button onClick={() => updateCart({
-                    itemName: name, 
-                    imageLink: imageLink, 
-                    quantity: quantity
-                }, "+")}>+</button>
+            
+            <img className="cart-image" src={imageLink} alt="" />
+            
+            <div className="item-info">
+                <div className="cart-item-name">{name}</div>
+                
+                {/* <div >quantity: {quantity}</div> */}
+            <div className="cart-quant-box">
+                <button onClick={() => handleUpdateCart("-")}>-</button>
                 <form action="">
                     <input type="number" value={quantity} onChange={(e) => updateCart({
                     itemName: name, 
@@ -37,12 +36,13 @@ const CartItemCard = ({name, imageLink, quantity}) => {
                 }, Math.max(0,e.target.value))
                     } id="quantity" />
                 </form>
-                <button onClick={() => updateCart({
-                    itemName: name, 
-                    imageLink: imageLink, 
-                    quantity: quantity
-                }, "-")}>-</button>
+                <button onClick={() => handleUpdateCart("+")}>+</button>
+                
             </div>
+            </div>
+            
+        
+            
         </div>
 
         // <div className="item-card">

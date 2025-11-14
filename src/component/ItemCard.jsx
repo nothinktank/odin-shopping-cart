@@ -20,7 +20,7 @@ const ItemCard = ({name, imageLink}) => {
     return (
         <div className="item-card">
             <h2 className="product-name">{name}</h2>
-            <img src={imageLink} alt="" />
+            <img className="card-image" src={imageLink} alt="" />
 
                 <div className="quant-box">
                     <button onClick={() => setQuantity(prev => {
