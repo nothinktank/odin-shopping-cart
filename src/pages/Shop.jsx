@@ -3,18 +3,42 @@ import ItemCard from "../component/ItemCard";
 import itemList from "../assets/Item-array";
 import { CartContext } from "../App";
 
+import { useState, useEffect } from "react";
+
 
 
 const Shop = () => {
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+        .then(response => response.json())
+        .then(data => {
+            setItems(data);
+            setLoading(false);
+        })
+        .catch(error => {
+            console.error('Error fetching items:', error);
+            setLoading(false);
+        });
+    }, []); //empty dependency array = fetch once on mount
+
+    if (loading) {
+        return (
+            <div>Loading</div>
+        )
+    }
+
     return (
         <>
             <div>Shop</div>
             <div className="card-container">
-                {itemList.map((item) => {
+                {items.map((item) => {
                     return <ItemCard 
-                                key={item.itemName}
-                                name={item.itemName} 
-                                imageLink={item.imageLink} />
+                                key={item.id}
+                                name={item.title} 
+                                imageLink={item.image} />
                 })}
                 
             </div>
