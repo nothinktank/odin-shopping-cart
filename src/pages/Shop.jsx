@@ -32,7 +32,7 @@ const Shop = () => {
 
     return (
         <>
-            <div>Shop</div>
+            {/* <div>Shop</div> */}
             <div className="card-container">
                 {items.map((item) => {
                     return <ItemCard 

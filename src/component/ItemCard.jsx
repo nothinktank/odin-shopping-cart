@@ -19,9 +19,9 @@ const ItemCard = ({name, imageLink}) => {
     }
     return (
         <div className="item-card">
-            <h2 className="product-name">{name}</h2>
             <img className="card-image" src={imageLink} alt="" />
-
+            <h2 className="product-name">{name}</h2>
+            
                 <div className="quant-box">
                     <button onClick={() => setQuantity(prev => {
                         if (prev === 0) return 0;

@@ -14,3 +14,4 @@ export default itemList;
 // add more than 1 pics
 //extra: when click, show a modal w more description and larger image
 //under the shop page, items in the third row are shorter than the first 2 rows
+//the 0 for quantity doesn't go away
