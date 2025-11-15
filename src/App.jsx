@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import './style.css'
 import './styles/Item-card.css'
@@ -18,8 +18,16 @@ import { useContext, createContext } from 'react'
 export const CartContext = createContext([])
 
 function App() {
-  // const [count, setCount] = useState(0)
-  const [cartItems, setCartItems] = useState([])
+  // initialize cart from localStorage, or empty array if nothing saved
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem('cart')
+    return savedCart ? JSON.parse(savedCart) : []
+  })
+
+  //save to localStorage whenever cartItems changes
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems))
+  }, [cartItems])
 
   //add items to cart function
   //newItem is the item object
@@ -38,27 +46,6 @@ function App() {
   }
 
   const updateCart = (item, operation) => {
-    // if (operation === "+") {
-    //   //if increasing quantity of cart item
-    //   setCartItems((prev) => {
-    //     return prev.map((i) => i.itemName === item.itemName ? {...i, quantity: i.quantity + 1} : i)
-    //   })
-    // } else {
-    //   //if decreasing quantity of cart item
-    //   setCartItems((prev) => {
-    //     return prev.map((i) => i.itemName === item.itemName ? {...i, quantity: Math.max(0, i.quantity - 1) } : i)
-    //   })
-    // }
-
-    // setCartItems((prev) => {
-    //   prev.map((i) => {
-    //     if (i.itemName === item.itemName) {
-    //       const newQuantity = operation === "+" ? (i.quantity + 1) : (Math.max(0, i.quantity - 1))
-    //       return { ...i, quantity: newQuantity }
-    //     }
-    //     return i;
-    //   }).filter(i => i.quantity > 0); //remove items with 0 quantity
-    // })
 
     setCartItems((prev) => 
       prev.map((i) => {
@@ -77,13 +64,16 @@ function App() {
       }).filter(i => i.quantity > 0)
       
     )
+  }
 
-
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.removeItem('cart');
   }
 
   return (
     // <>
-    <CartContext.Provider value={{cartItems, addToCart, updateCart}}>
+    <CartContext.Provider value={{cartItems, addToCart, updateCart, clearCart}}>
       <div>
         {/* <h1>my shop</h1> */}
 
