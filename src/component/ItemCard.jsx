@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../App";
 
-const ItemCard = ({name, imageLink}) => {
+const ItemCard = ({name, imageLink, price}) => {
     const {addToCart, cartItems} = useContext(CartContext)
     const [quantity, setQuantity] = useState(0)
 
@@ -20,7 +20,11 @@ const ItemCard = ({name, imageLink}) => {
     return (
         <div className="item-card">
             <img className="card-image" src={imageLink} alt="" />
-            <h2 className="product-name">{name}</h2>
+            <div className="description">
+                <p className="product-name">{name}</p>
+                <div className="price">${price}</div>
+            </div>
+            
             
                 <div className="quant-box">
                     <button onClick={() => setQuantity(prev => {

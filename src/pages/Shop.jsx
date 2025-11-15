@@ -38,7 +38,8 @@ const Shop = () => {
                     return <ItemCard 
                                 key={item.id}
                                 name={item.title} 
-                                imageLink={item.image} />
+                                imageLink={item.image}
+                                price={item.price} />
                 })}
                 
             </div>
