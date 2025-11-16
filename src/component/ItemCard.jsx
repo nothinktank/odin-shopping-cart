@@ -17,6 +17,22 @@ const ItemCard = ({name, imageLink, price}) => {
         }
         
     }
+
+    const handleQuantityChange = (e) => {
+        const value = e.target.value
+
+        //allow empty string
+        if (value === '') {
+            setQuantity('')
+            return
+        }
+
+        //otherwise converts the number back to 0 
+            const num = Number(value)
+            setQuantity(Math.max(0, num))
+            return
+        
+    }
     return (
         <div className="item-card">
             <img className="card-image" src={imageLink} alt="" />
@@ -32,11 +48,15 @@ const ItemCard = ({name, imageLink, price}) => {
                         return prev - 1;
                         })}>-</button>
                     <form action="">
-                        <input type="number" value={quantity} onChange={(e) => setQuantity(Math.max(0, Number(e.target.value))) } id="quantity" />
+                        <input type="number" 
+                               value={quantity} 
+                               onChange={handleQuantityChange}
+                               onBlur={() => setQuantity(prev => prev === '' ? 0 : prev)}
+                               id="quantity" />
                     </form>
-                    <button onClick={() => setQuantity(prev => prev + 1)}>+</button>
+                    <button onClick={() => setQuantity(prev => prev === '' ? 1 : prev + 1)}>+</button>
                 </div>
-                <button onClick={handleAddToCart}>Add to Cart</button>
+                <button className='add-to-cart' onClick={handleAddToCart}>Add to Cart</button>
         </div>
     )
 }

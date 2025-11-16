@@ -41,13 +41,19 @@
 
 .quant-box {
     display: flex;
-    padding: 0 1rem;
+    padding: 0 2rem;
     justify-content: center;
+    gap: 0.5rem;
 }
 
 .quant-box input {
     font-size: 1.2rem;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
     width: 100%;
     text-align: center;
+    border-color: lightgray;
+}
+
+.add-to-cart {
+    margin: 0.5rem 2rem 1rem ;
 }
