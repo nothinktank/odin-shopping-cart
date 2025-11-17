@@ -10,7 +10,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
                 0 8px 16px rgba(0, 0, 0, 0.1);
 
-    /* padding: 0; */
+    justify-content: space-between;
 }
 
 .product-name {
@@ -33,6 +33,8 @@
     gap: 1rem;
     padding: 0 1rem;
     justify-content: space-between;
+
+    flex-grow: 1;
 }
 
 .price {
@@ -43,6 +45,8 @@
     display: flex;
     padding-bottom: 1rem;
     gap: 2rem;
+
+    justify-content: space-between;
 }
 
 .quant-box {
@@ -81,7 +85,7 @@
     border: 1px solid #e5e7eb;
     /* border-radius: 0.5rem; */
     background-color: #ffffff;
-
+    color: #737373;
 
     /* display: none; */
 }
@@ -104,4 +108,9 @@
 
 .add-to-cart {
     margin: 0 1rem ;
+    border: 1px solid transparent;
+    /* color: #e5e7eb; */
+    background-color: transparent;
+    border-radius: 0.5rem;
+    padding-top: 3px;
 }
