@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../App";
 
+//import font awesome icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
 const ItemCard = ({name, imageLink, price}) => {
     const {addToCart, cartItems} = useContext(CartContext)
     const [quantity, setQuantity] = useState(0)
@@ -41,9 +45,10 @@ const ItemCard = ({name, imageLink, price}) => {
                 <div className="price">${price}</div>
             </div>
             
-            
+            <div className="quantity-cart-button">
+
                 <div className="quant-box">
-                    <button onClick={() => setQuantity(prev => {
+                    <button className='minus' onClick={() => setQuantity(prev => {
                         if (prev === 0) return 0;
                         return prev - 1;
                         })}>-</button>
@@ -54,9 +59,17 @@ const ItemCard = ({name, imageLink, price}) => {
                                onBlur={() => setQuantity(prev => prev === '' ? 0 : prev)}
                                id="quantity" />
                     </form>
-                    <button onClick={() => setQuantity(prev => prev === '' ? 1 : prev + 1)}>+</button>
+                    <button className='plus' onClick={() => setQuantity(prev => prev === '' ? 1 : prev + 1)}>+</button>
                 </div>
-                <button className='add-to-cart' onClick={handleAddToCart}>Add to Cart</button>
+                <button 
+                    className='add-to-cart' 
+                    onClick={handleAddToCart}
+                    disabled={quantity === 0 || quantity === ''} //optional, disabled if quantity is 0
+                    >
+                        <FontAwesomeIcon icon={faShoppingCart} />
+                    </button>
+            </div>
+                
         </div>
     )
 }
