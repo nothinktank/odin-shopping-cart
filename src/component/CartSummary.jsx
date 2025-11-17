@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../App";
+import CartSummaryItem from "./CartSummaryItem";
 
 const CartSummary = () => {
     const {cartItems} = useContext(CartContext)
@@ -13,14 +14,15 @@ const CartSummary = () => {
         <div className="cart-summary-box">
             <div>Summary</div>
             <div>
-                Cart items
                 {/* render cart items here */}
                 {cartItems.map((item) => {
                     return (
-                        <div>
-                            <div>{item.itemName}</div>
-                            <div>${item.price}</div>
-                        </div>
+                            <CartSummaryItem 
+                                key={item.itemName}
+                                itemName={item.itemName}
+                                price={item.price}
+                            />
+                        
                     )
                 })}
             </div>

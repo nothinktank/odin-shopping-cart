@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import './App.css'
 import './style.css'
 import './styles/Item-card.css'
@@ -6,6 +7,8 @@ import './styles/Cart-item-card.css'
 import './styles/Card-container.css'
 import './styles/Cart.css'
 import './styles/Cart-summary.css'
+import './styles/Cart-summary-item.css'
+
 import { Link, Route, Routes, Outlet } from 'react-router'
 import Navbar from './Navbar'
 import Home from './pages/Home'

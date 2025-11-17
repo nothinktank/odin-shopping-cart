@@ -17,3 +17,5 @@ export default itemList;
 //the 0 for quantity doesn't go away-fixed
 
 //add clear cart button in cart
+
+//style cart item image
