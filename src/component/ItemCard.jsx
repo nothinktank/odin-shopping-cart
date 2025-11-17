@@ -15,7 +15,9 @@ const ItemCard = ({name, imageLink, price}) => {
             addToCart({
                 itemName: name, 
                 imageLink: imageLink, 
-                quantity: quantity
+                quantity: quantity,
+                price: price,
+                // totalPrice: price * quantity
             });
             setQuantity(0) //reset quantity to 0
         }
