@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../App";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+
 const CartItemCard = ({name, imageLink, quantity}) => {
     const { updateCart, removeItem } = useContext(CartContext)
     
@@ -37,7 +40,7 @@ const CartItemCard = ({name, imageLink, quantity}) => {
                     } id="quantity" />
                 </form>
                 <button className="cart-minus" onClick={() => handleUpdateCart("+")}>+</button>
-                <button onClick={() => removeItem(name)}>Remove Item</button>
+                <button onClick={() => removeItem(name)}><FontAwesomeIcon icon={faTrashCan} /></button>
                 
             </div>
             </div>
