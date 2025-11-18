@@ -29,18 +29,21 @@ const CartItemCard = ({name, imageLink, quantity}) => {
                 <div className="cart-item-name">{name}</div>
                 
                 {/* <div >quantity: {quantity}</div> */}
-            <div className="cart-quant-box">
-                <button className="cart-plus" onClick={() => handleUpdateCart("-")}>-</button>
-                <form action="">
-                    <input type="number" value={quantity} onChange={(e) => updateCart({
-                    itemName: name, 
-                    imageLink: imageLink, 
-                    quantity: quantity
-                }, Math.max(0,e.target.value))
-                    } id="quantity" />
-                </form>
-                <button className="cart-minus" onClick={() => handleUpdateCart("+")}>+</button>
-                <button onClick={() => removeItem(name)}><FontAwesomeIcon icon={faTrashCan} /></button>
+            <div className="update-cart-box">
+                <div className="quantity-spinner-container">
+                    <button className="cart-plus" onClick={() => handleUpdateCart("-")}>-</button>
+                        <form action="">
+                            <input type="number" value={quantity} onChange={(e) => updateCart({
+                                itemName: name, 
+                                imageLink: imageLink, 
+                                quantity: quantity
+                            }, Math.max(0,e.target.value))
+                            } id="quantity" />
+                        </form>
+                    <button className="cart-minus" onClick={() => handleUpdateCart("+")}>+</button>
+                </div>
+                
+                <button className='trashcan' onClick={() => removeItem(name)}><FontAwesomeIcon icon={faTrashCan} /></button>
                 
             </div>
             </div>

@@ -20,8 +20,8 @@ export default itemList;
 
 //style cart item image
 
-//viewport resizing smaller should push the summary box to the bottom 
+//viewport resizing smaller should push the summary box to the bottom - done
 
-//add trash button in cart items
+//add trash button in cart items - done
 
-//when backspace to clear number in the cart item, the item disappears, need to make it stay
+//when backspace to clear number in the cart item, the item disappears, need to make it stay -done
