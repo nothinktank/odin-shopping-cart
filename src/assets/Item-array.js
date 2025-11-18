@@ -19,3 +19,9 @@ export default itemList;
 //add clear cart button in cart
 
 //style cart item image
+
+//viewport resizing smaller should push the summary box to the bottom 
+
+//add trash button in cart items
+
+//when backspace to clear number in the cart item, the item disappears, need to make it stay

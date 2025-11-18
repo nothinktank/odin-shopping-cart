@@ -48,6 +48,12 @@ function App() {
     })
   }
 
+  const removeItem = (itemNameToBeRemoved) => {
+    setCartItems((prev) => {
+      return prev.filter((i) => i.itemName != itemNameToBeRemoved);
+    })
+  }
+
   const updateCart = (item, operation) => {
 
     setCartItems((prev) => 
@@ -57,10 +63,10 @@ function App() {
           if (operation === '+') {
             newQuantity = i.quantity + 1;
           } else if (operation === '-') {
-            newQuantity = Math.max(0, i.quantity - 1) ;
+            newQuantity = Math.max(1, i.quantity - 1) ;
           } else if (typeof(operation) === "number") {
-            newQuantity = Math.max(0, operation);
-          }
+            newQuantity = Math.max(1, operation);
+          } 
           return {...i, quantity: newQuantity}
         }
         return i
@@ -76,7 +82,7 @@ function App() {
 
   return (
     // <>
-    <CartContext.Provider value={{cartItems, addToCart, updateCart, clearCart}}>
+    <CartContext.Provider value={{cartItems, addToCart, updateCart, clearCart, removeItem}}>
       <div>
         {/* <h1>my shop</h1> */}
 

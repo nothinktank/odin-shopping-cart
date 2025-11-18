@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../App";
 
 const CartItemCard = ({name, imageLink, quantity}) => {
-    const { updateCart } = useContext(CartContext)
+    const { updateCart, removeItem } = useContext(CartContext)
     
 
     const handleUpdateCart = (operation) => {
@@ -27,7 +27,7 @@ const CartItemCard = ({name, imageLink, quantity}) => {
                 
                 {/* <div >quantity: {quantity}</div> */}
             <div className="cart-quant-box">
-                <button onClick={() => handleUpdateCart("-")}>-</button>
+                <button className="cart-plus" onClick={() => handleUpdateCart("-")}>-</button>
                 <form action="">
                     <input type="number" value={quantity} onChange={(e) => updateCart({
                     itemName: name, 
@@ -36,7 +36,8 @@ const CartItemCard = ({name, imageLink, quantity}) => {
                 }, Math.max(0,e.target.value))
                     } id="quantity" />
                 </form>
-                <button onClick={() => handleUpdateCart("+")}>+</button>
+                <button className="cart-minus" onClick={() => handleUpdateCart("+")}>+</button>
+                <button onClick={() => removeItem(name)}>Remove Item</button>
                 
             </div>
             </div>
@@ -45,22 +46,6 @@ const CartItemCard = ({name, imageLink, quantity}) => {
             
         </div>
 
-        // <div className="item-card">
-        //     <h2 className="product-name">{name}</h2>
-        //     <img src={imageLink} alt="" />
-
-        //         <div className="quant-box">
-        //             <button onClick={() => setQuantity(prev => {
-        //                 if (prev === 0) return 0;
-        //                 return prev - 1;
-        //                 })}>-</button>
-        //             <form action="">
-        //                 <input type="number" value={quantity} onChange={(e) => setQuantity(Math.max(0, Number(e.target.value))) } id="quantity" />
-        //             </form>
-        //             <button onClick={() => setQuantity(prev => prev + 1)}>+</button>
-        //         </div>
-        //         <button onClick={handleAddToCart}>Add to Cart</button>
-        // </div>
     )
 }
 
