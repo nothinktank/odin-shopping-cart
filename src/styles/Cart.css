@@ -9,16 +9,22 @@
 .main-section {
     margin: 1rem;
     
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 1rem;
-    flex: 1;
+    display: flex;
+    /* grid-template-columns: 3fr 2fr; */
+
+    justify-content: center;
+    gap: 1rem; /*space between the cart list and the summary*/
+    /* flex: 1; */
+    flex-wrap: wrap;
+    justify-items: auto;
 }
 
 .cart-items-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    flex: auto;
+    /* width: 100%; */
 }
 
 .footer {
@@ -32,11 +38,10 @@
 }
 
 .summary-container {
+   /* flex-shrink: 0; prevent from shrinking*/
+    /* width: 500px; */
+    width: clamp(400px, 30vw, 500px);
     
-    /* flex-direction: row; */
-    /* width: 100%; */
-/*     
-    max-height: ; */
-
+    
     
 }

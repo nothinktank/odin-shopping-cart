@@ -25,6 +25,8 @@ const Cart = () => {
                     cartItems.map((item) => {
                         return (
                             <CartItemCard 
+                                // className='cart-item'
+
                                 key={item.itemName}
                                 name={item.itemName}
                                 quantity={item.quantity}
