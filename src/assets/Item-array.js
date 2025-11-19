@@ -25,3 +25,8 @@ export default itemList;
 //add trash button in cart items - done
 
 //when backspace to clear number in the cart item, the item disappears, need to make it stay -done
+
+//update font
+
+
+//cart bubble switched to the left after screen becomes too small

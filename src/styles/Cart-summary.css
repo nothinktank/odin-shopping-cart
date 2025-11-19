@@ -12,9 +12,10 @@
 }
 
 .summary {
-    
+    font-size: larger;
+    padding: 0;
     padding-bottom: 0.5rem;
-    text-align: center;
+    text-align: left;
     width: 100%;
     border-bottom: 1px solid #ddd;
 }

@@ -55,3 +55,36 @@ body {
 /* .nav Link {
     color: inherit;
 } */
+
+.cart-link {
+    font-size: larger;
+    color: rgb(67, 67, 67);
+    position: relative;
+    padding-right: 13px;
+}
+
+.cart-bubble {
+    /* Positioning */
+    position: absolute;
+    top: -10px; /* Pull it up above the link */
+    right: 0; /* Position it to the right of the link */
+    /* Visuals */
+    background-color: red;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1; /* Ensures text is centered vertically */
+
+
+    width: 20px; 
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%; /* Makes it a perfect circle */
+    padding: 0; /* Adjust padding for bubble size */
+    
+}

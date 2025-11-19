@@ -12,7 +12,7 @@ const CartSummary = () => {
 
     return (
         <div className="cart-summary-box">
-            <div className="summary" >Summary</div>
+            <div className="summary" >Order Summary</div>
             <div>
                 {/* render cart items here */}
                 {cartItems.map((item) => {
@@ -27,7 +27,7 @@ const CartSummary = () => {
                     )
                 })}
             </div>
-            <div className="total">Total: ${totalPrice.toFixed(2)}</div>
+            <div className="total">Cart Total: ${totalPrice.toFixed(2)}</div>
         </div>
     )
 }
