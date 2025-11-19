@@ -5,7 +5,7 @@ import { CartContext } from "../App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-const CartItemCard = ({name, imageLink, quantity}) => {
+const CartItemCard = ({name, imageLink, quantity, price}) => {
     const { updateCart, removeItem } = useContext(CartContext)
     
 
@@ -28,6 +28,8 @@ const CartItemCard = ({name, imageLink, quantity}) => {
             <div className="item-info">
                 <div className="cart-item-name">{name}</div>
                 
+                <div className="cart-item-price">${price}/Unit</div>
+
                 {/* <div >quantity: {quantity}</div> */}
             <div className="update-cart-box">
                 <div className="quantity-spinner-container">

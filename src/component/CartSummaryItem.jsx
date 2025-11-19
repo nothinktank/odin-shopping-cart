@@ -1,8 +1,8 @@
-const CartSummaryItem = ({itemName, price}) => {
+const CartSummaryItem = ({itemName, price, quantity}) => {
     return(
         <div className="cart-summary-item" >
             <div>{itemName}</div>
-            <div className="summary-item-price">${price}</div>
+            <div className="summary-item-price">${price} </div>
         </div>
     )
 }

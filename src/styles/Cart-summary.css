@@ -6,6 +6,21 @@
                 0 8px 16px rgba(0, 0, 0, 0.1);
     
     padding: 1rem;
-                
+    
+    /* align-items: center; */
 
+}
+
+.summary {
+    
+    padding-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.total {
+    padding-top: 0.5rem;
+    /* align-self:self-end; */
+    text-align: right;
 }

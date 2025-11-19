@@ -30,7 +30,8 @@ const Cart = () => {
                                 key={item.itemName}
                                 name={item.itemName}
                                 quantity={item.quantity}
-                                imageLink={item.imageLink}     
+                                imageLink={item.imageLink}  
+                                price={item.price}   
                             />
                         )
                     })
