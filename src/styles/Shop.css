@@ -1,0 +1,8 @@
+.shop-container{
+    display: flex;
+    flex-direction: column;
+}
+/* 
+.footer {
+    background-color: aqua;
+} */

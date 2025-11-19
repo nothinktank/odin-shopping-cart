@@ -31,7 +31,7 @@ const Shop = () => {
     }
 
     return (
-        <>
+        <div className="shop-container">
             {/* <div>Shop</div> */}
             <div className="card-container">
                 {items.map((item) => {
@@ -44,8 +44,8 @@ const Shop = () => {
                 
             </div>
             
-            <Link to='/'>Return Home</Link>
-        </>
+            <Link className="footer" to='/'>Return Home</Link>
+        </div>
         
     )
 }
