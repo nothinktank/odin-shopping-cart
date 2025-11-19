@@ -44,7 +44,7 @@ const Shop = () => {
                 
             </div>
             
-            <Link className="footer" to='/'>Return Home</Link>
+            <Link className="shop-footer" to='/'>Return Home</Link>
         </div>
         
     )

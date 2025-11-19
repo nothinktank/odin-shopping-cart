@@ -47,7 +47,8 @@ const Cart = () => {
             
             
             {/* display cart items here with quantity */}
-            <div className="footer"><Link to='/'>Return Home</Link></div>
+            {/* <div className="cart-footer"><Link to='/'>Return Home</Link></div> */}
+            <Link className="cart-footer" to='/'>Return Home</Link>
             
         </div>
     )

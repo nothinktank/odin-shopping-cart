@@ -27,15 +27,13 @@
     /* width: 100%; */
 }
 
-.footer {
+.cart-footer {
     padding: 1rem;
     text-align: center;
     border-top: 1px solid #ddd;
+    text-decoration: none;
 }
 
-.empty-cart-container {
-    
-}
 
 .summary-container {
    /* flex-shrink: 0; prevent from shrinking*/
