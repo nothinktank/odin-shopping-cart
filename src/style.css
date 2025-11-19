@@ -1,8 +1,19 @@
+@font-face {
+    font-family: 'Eiko';
+    src: url('./assets/fonts/PPEiko-Medium.woff2') format('woff2'),
+         url('./assets/fonts/PPEiko-Medium.otf') format('opentype');
+    
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
+    font-family: 'Eiko', serif;
     margin: 0;
 }
 

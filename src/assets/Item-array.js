@@ -30,3 +30,5 @@ export default itemList;
 
 
 //cart bubble switched to the left after screen becomes too small
+
+//price overflow problem when screen too small
