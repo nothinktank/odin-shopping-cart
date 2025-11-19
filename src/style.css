@@ -28,6 +28,9 @@ body {
     padding: 0 1rem;
 }
 
+/* .navbar-list {
+    margin: 0;
+} */
 .site-title {
     font-size: 2rem;
     text-decoration: none;
@@ -36,7 +39,7 @@ body {
 
 .nav ul {
     padding: 0;
-    margin: 1rem;
+    margin: 1rem 0;
     list-style: none;
     display: flex;
     gap: 1rem;
