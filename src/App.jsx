@@ -9,6 +9,7 @@ import './styles/Cart.css'
 import './styles/Cart-summary.css'
 import './styles/Cart-summary-item.css'
 import './styles/Shop.css'
+import './styles/Home.css'
 
 import { Link, Route, Routes, Outlet } from 'react-router'
 import Navbar from './Navbar'

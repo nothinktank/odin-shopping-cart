@@ -17,7 +17,7 @@ const Navbar = () => {
                     <Link className="links" to='Shop'>Shop</Link>
                 </li>
                 <li>
-                    {/* need a custom link here to add a bubble of item quantity in the cart */}
+                    
                     <Link className="cart-link" to="Cart">
                         <FontAwesomeIcon icon={faShoppingCart} />
                             {

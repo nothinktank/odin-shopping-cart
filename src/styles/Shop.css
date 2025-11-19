@@ -6,3 +6,22 @@
 .footer {
     background-color: aqua;
 } */
+
+.loading-panel {
+    position: fixed; /* Use 'absolute' if you want it relative to a specific parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+
+    background-color: #ffffff; /* White background */
+    color: #333333; /* Dark gray text */
+    font-size: 1.5rem; /* Large, noticeable text */
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 0.1rem; */
+}

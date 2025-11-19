@@ -75,6 +75,14 @@ body {
     padding-right: 13px;
 }
 
+/* .cart-link:hover {
+    
+    padding: 10px;
+    border-radius: 0.8rem;
+    background-color: #b6b6b6;
+    color: white;
+} */
+
 .cart-bubble {
     /* Positioning */
     position: absolute;

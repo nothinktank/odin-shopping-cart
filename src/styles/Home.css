@@ -1,0 +1,5 @@
+.home-image {
+    border-radius: 10%;
+    object-fit: contain;
+    width: 100vw;
+}

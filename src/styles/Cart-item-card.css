@@ -36,6 +36,7 @@
 
 .cart-item-name {
     font-size: larger;
+    text-wrap: wrap;
 }
 
 .update-cart-box {

@@ -26,7 +26,7 @@ const Shop = () => {
 
     if (loading) {
         return (
-            <div>Loading</div>
+            <div className="loading-panel">Loading</div>
         )
     }
 
